@@ -1,0 +1,9 @@
+<%= form_for(:user, :url => login_path) do |f| %>
+<h5>Login<h5>
+<div style="font-size: 12pt">
+  <p>Username:<%= f.text_field :username%></p>
+  <p>Password:<%= f.password_field :password%></p>
+  <p><%= f.submit :Login %></p>
+</div>
+<% end %>
+

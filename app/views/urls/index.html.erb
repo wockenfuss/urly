@@ -1,0 +1,23 @@
+<h1><%= @user.username %></h1>
+<%= render 'form' %>
+<table>
+  <tr>
+    <th>URL</th>
+    <th>Shortened</th>
+    <th>Views</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @urls.each do |url| %>
+  <tr>
+    <td><%= link_to url.original, url.original %></td>
+    <td><%= link_to url.short ,"http://localhost:3000/#{url.short}" %></td>
+    <td><%= url.view_count %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

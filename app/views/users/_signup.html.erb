@@ -1,0 +1,18 @@
+<%= form_for(:user, :url => {:controller => 'users', :action => 'create' }) do |f| %>
+<h5>New User<h5>
+<div style="font-size: 12pt">
+  <p>Username:<%= f.text_field :username%></p>
+  <p>Password:<%= f.password_field :password%></p>
+  <p>Confirm:<%= f.password_field :password_confirmation%></p>
+  <p><%= f.submit :Signup %></p>
+</div>
+<% end %>
+
+<% if @user.errors.any? %>
+  <ul class="Signup_Errors">
+    <% for message_error in @user.errors.full_messages %>
+    <li>* <%= message_error %></li>
+    <% end %>
+  </ul>
+<% end %>
+

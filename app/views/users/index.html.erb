@@ -1,0 +1,8 @@
+<h1>Users</h1>
+
+
+<% @users.each do |user| %>
+<p><%= user.username %>
+<%= link_to "view account", user_urls_path(user) %></p>
+
+<% end %>
